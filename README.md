@@ -5,7 +5,7 @@ Demo app to test kubernetes locally using minikube.
 minikube start
 
 1. Apply manifest mongo-secret.yaml
-kubectl apply -f mongo-secret.yaml
+```kubectl apply -f mongo-secret.yaml```
 
 2. Apply mongo configmap
 kubectl apply -f mongo-configmap.yaml
