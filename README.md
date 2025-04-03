@@ -2,19 +2,19 @@
 Demo app to test kubernetes locally using minikube.
 
 0. Start minikube
-minikube start
+```minikube start```
 
 1. Apply manifest mongo-secret.yaml
 ```kubectl apply -f mongo-secret.yaml```
 
 2. Apply mongo configmap
-kubectl apply -f mongo-configmap.yaml
+```kubectl apply -f mongo-configmap.yaml```
 
 3. Apply mongo express
-kubectl apply -f mongo-express.yaml
+```kubectl apply -f mongo-express.yaml```
 
 4. Create minikube service
-minikube service mongo-express-service
+```minikube service mongo-express-service```
 
 5. Mongo-express default user and pass
 admin, pass.
