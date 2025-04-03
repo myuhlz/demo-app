@@ -24,14 +24,15 @@ admin, pass.
 https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
 
 1. ```helm repo add stable https://charts.helm.sh/stable```
-2. helm repo add prometheus-community https://prometheus-community.github.io/helm-chart
-3. helm search repo prometheus-community
-4. helm install stable prometheus-community/kube-prometheus-stack -n monitor
-5. kubectl get pods -n monitor
-6. kubectl get svc -n monitor
-7. In order to make prometheus and grafana available outside the cluster, use LoadBalancer or NodePort instead of ClusterIP
-8. Edit prometheus: kubectl edit svc stable-kube-prometheus-sta-prometheus -n monitor 
-9. Edit grafana: kubectl edit svc stable-grafana -n monitor 
+2. ```helm repo add prometheus-community https://prometheus-community.github.io/helm-chart```
+3. ```helm search repo prometheus-community```
+4. ```helm repo update```
+5. ```helm install stable prometheus-community/kube-prometheus-stack -n monitor```
+6. ```kubectl get pods -n monitor```
+7. ```kubectl get svc -n monitor```
+8. In order to make prometheus and grafana available outside the cluster, use LoadBalancer or NodePort instead of ClusterIP
+9. Edit prometheus: kubectl edit svc stable-kube-prometheus-sta-prometheus -n monitor 
+10. Edit grafana: kubectl edit svc stable-grafana -n monitor 
 11. Create service for grafana minikube service stable-grafana -n monitor 
 12. Login to grafana username: admin password: prom-operator
 13. Create dashboard for CPU and Memory usage per pod.
