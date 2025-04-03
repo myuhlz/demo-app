@@ -28,15 +28,16 @@ https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-promet
 3. ```helm search repo prometheus-community```
 4. ```helm repo update```
 5. ```helm install stable prometheus-community/kube-prometheus-stack -n monitor```
-6. ```kubectl get pods -n monitor```
-7. ```kubectl get svc -n monitor```
-8. In order to make prometheus and grafana available outside the cluster, use LoadBalancer or NodePort instead of ClusterIP
-9. Edit prometheus: kubectl edit svc stable-kube-prometheus-sta-prometheus -n monitor 
-10. Edit grafana: kubectl edit svc stable-grafana -n monitor 
-11. Create service for grafana minikube service stable-grafana -n monitor 
-12. Login to grafana username: admin password: prom-operator
-13. Create dashboard for CPU and Memory usage per pod.
-14. Import by dashboard ID - https://grafana.com/grafana/dashboards/
+6. ```kubectl create namespace monitoring```
+7. ```kubectl get pods -n monitoring```
+8. ```kubectl get svc -n monitoring```
+9. In order to make prometheus and grafana available outside the cluster, use LoadBalancer or NodePort instead of ClusterIP
+10. Edit prometheus: kubectl edit svc stable-kube-prometheus-sta-prometheus -n monitor 
+11. Edit grafana: kubectl edit svc stable-grafana -n monitor 
+12. Create service for grafana minikube service stable-grafana -n monitor 
+13. Login to grafana username: admin password: prom-operator
+14. Create dashboard for CPU and Memory usage per pod.
+15. Import by dashboard ID - https://grafana.com/grafana/dashboards/
     - CoreDNS: 14981
     - kube-state-metrics-v2: 13332
     - 1 K8S for Prometheus Dashboard 20211010 EN: 15661
