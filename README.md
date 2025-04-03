@@ -23,7 +23,7 @@ admin, pass.
 # Grafana Prometheus deployment
 https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
 
-1. helm repo add stable https://charts.helm.sh/stable
+1. ```helm repo add stable https://charts.helm.sh/stable```
 2. helm repo add prometheus-community https://prometheus-community.github.io/helm-chart
 3. helm search repo prometheus-community
 4. helm install stable prometheus-community/kube-prometheus-stack -n monitor
